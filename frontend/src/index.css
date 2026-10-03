@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  /* chart tokens (validated categorical, dark surface) */
+  --series-1: #3987e5;
+  --series-2: #d95926;
+  --series-3: #199e70;
+  --series-4: #9085e9;
+  --grid: #1c222b;
+  --axis: #6b7380;
+}
+
+html, body, #root { height: 100%; }
+body { font-family: Inter, system-ui, "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; }
+
+@layer components {
+  .card { @apply bg-panel border border-line rounded-lg; }
+  .card-h { @apply flex items-center justify-between px-4 py-2.5 border-b border-line text-[11px] font-semibold tracking-[0.12em] uppercase text-ink2; }
+  .num { @apply font-mono tabular-nums; }
+  .btn { @apply inline-flex items-center gap-1.5 rounded-md border border-line2 bg-panel2 px-3 py-1.5 text-xs font-medium text-ink hover:border-accent hover:text-white transition-colors disabled:opacity-50; }
+  .btn-primary { @apply border-accent bg-accent/15 text-white hover:bg-accent/25; }
+  .input { @apply rounded-md border border-line2 bg-bg px-2.5 py-1.5 text-xs text-ink placeholder:text-mute focus:outline-none focus:border-accent; }
+  .th { @apply px-3 py-2 text-left text-[10px] font-semibold uppercase tracking-wider text-mute whitespace-nowrap select-none; }
+  .td { @apply px-3 py-2 text-xs whitespace-nowrap; }
+  .label { @apply text-[10px] uppercase tracking-wider text-mute; }
+}
+
+.scroll-thin::-webkit-scrollbar { height: 8px; width: 8px; }
+.scroll-thin::-webkit-scrollbar-thumb { background: #2a323e; border-radius: 4px; }
+.scroll-thin::-webkit-scrollbar-track { background: transparent; }
+
+.recharts-tooltip-wrapper { outline: none; }
